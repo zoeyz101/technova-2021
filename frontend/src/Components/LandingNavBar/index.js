@@ -5,9 +5,9 @@ import Navbar from "react-bootstrap/Navbar";
 import Image from "../../Images/logo.png";
 import Button from "react-bootstrap/Button";
 
-const NavBar = () => {
+const LandingNavBar = () => {
   return (
-    <Navbar collapseOnSelect expand="lg" bg="" variant="light" fixed="top">
+    <Navbar collapseOnSelect expand="lg" bg="" variant="light" fixed="top" className="navbar">
       <Navbar.Brand href="/">
         <img
           src={Image}
@@ -23,15 +23,12 @@ const NavBar = () => {
         className="justify-content-end"
       >
         <Nav>
-          <Nav.Link href="/Home">HOME</Nav.Link>
-          <Nav.Link href="#">THE LIST</Nav.Link>
-          <Nav.Link href="#">GROUPS</Nav.Link>
-          <Nav.Link href="#">RESOURCES</Nav.Link>
-          <Nav.Link href="#">SETTINGS</Nav.Link>
+          <Nav.Link href="/Home">LOGIN</Nav.Link>
+          <Button href="#" variant="dark">JOIN NOW</Button>
         </Nav>
       </Navbar.Collapse>
     </Navbar>
   );
 };
 
-export default NavBar;
+export default LandingNavBar;
