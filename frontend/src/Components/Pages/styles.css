@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+
+body {
+    background: linear-gradient(51.98deg, #D7B0F5 26.09%, #FFBFFC 73.63%, #FFE7FF 93.66%);
+    background-size:cover;
+    background-repeat:no-repeat;
+}
+
+.description {
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 7.5vh;
+    position:absolute;
+    top:20%;
+    left:5%;
+    right: 40%;
+}
+
+.landing-page-left {
+    
+}
+
+.landing-image {
+    width:70%;
+    height:80%;
+    position: absolute;
+    bottom: 8%;
+    right: 0px;
+}
+
+.join-now-button {
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 3.5vh;
+    margin-bottom:10%;
+    margin-top:35%;
+    margin-left:5%;
+    padding-left: 50px;
+    padding-right:50px;
+}
