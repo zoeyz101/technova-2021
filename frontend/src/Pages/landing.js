@@ -12,7 +12,7 @@ const Landing = () =>{
                 <Row className = "landing">
                     <Col sm={6} className = "slogan">
                         <Row className="description">
-                            Overcoming imposter syndrome by tracking one accomplishWomen+ at time
+                            Overcoming imposter syndrome by tracking one accomplishWomen+ at a time.
                         </Row>
                         <Row>
                             <Button variant="dark" className="join-now-button">JOIN NOW</Button>
