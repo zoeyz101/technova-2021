@@ -6,18 +6,14 @@ import "./styles.scss";
 const Accomplishment = ({title,type,date,description}) =>{
     return (
         <Container className = "accomplishment">
-            <Row>
-                <Col>
-                    {title}
-                </Col>
-                <Col>
-                    <Button>{type}</Button>
-                </Col>
+            <Button className="type-button">{type}</Button>
+            <Row className="title">
+               {title}
             </Row>
-            <Row>
+            <Row className="date">
                 {date}
             </Row>
-            <Row>
+            <Row className="description">
                 {description}
             </Row>
         </Container>

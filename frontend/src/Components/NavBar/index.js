@@ -24,7 +24,7 @@ const NavBar = () => {
       >
         <Nav>
           <Nav.Link href="/Home">HOME</Nav.Link>
-          <Nav.Link href="#">THE LIST</Nav.Link>
+          <Nav.Link href="/list">THE LIST</Nav.Link>
           <Nav.Link href="#">GROUPS</Nav.Link>
           <Nav.Link href="#">RESOURCES</Nav.Link>
           <Nav.Link href="#">SETTINGS</Nav.Link>
