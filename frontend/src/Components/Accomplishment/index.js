@@ -13,7 +13,7 @@ const Accomplishment = ({title,type,date,description}) =>{
             <Row className="date">
                 {date}
             </Row>
-            <Row className="description">
+            <Row className="card-description">
                 {description}
             </Row>
         </Container>
