@@ -8,3 +8,15 @@
 }
 
 @import "~bootstrap/scss/bootstrap";
+
+.fixed-top {
+  position: fixed;
+  top: 0;
+  right: 10px;
+  left: 10px;
+  z-index: 1030;
+}
+.navbar{
+  padding-left: 20px;
+  padding-right: 30px;
+}

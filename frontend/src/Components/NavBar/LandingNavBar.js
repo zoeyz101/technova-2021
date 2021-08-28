@@ -5,13 +5,13 @@ import Navbar from "react-bootstrap/Navbar";
 import Image from "../../Images/logo.png";
 import Button from "react-bootstrap/Button";
 
-const LandingNavBar = () => {
+const NavBar = () => {
   return (
     <Navbar collapseOnSelect expand="lg" bg="" variant="light" fixed="top" className="navbar">
       <Navbar.Brand href="/">
         <img
           src={Image}
-          width="240"
+          width="250"
           height="75"
           className="d-inline-block align-top"
           alt="AccomplishWomen+ Logo"
@@ -31,4 +31,4 @@ const LandingNavBar = () => {
   );
 };
 
-export default LandingNavBar;
+export default NavBar;
