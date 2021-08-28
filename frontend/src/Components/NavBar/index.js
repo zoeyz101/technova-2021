@@ -3,10 +3,10 @@ import "./styles.scss";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Image from "../../Images/logo.png";
-import Button from "react-bootstrap/Button";
 
 const NavBar = () => {
   return (
+    <>
     <Navbar collapseOnSelect expand="lg" bg="" variant="light" fixed="top">
       <Navbar.Brand href="/">
         <img
@@ -31,6 +31,7 @@ const NavBar = () => {
         </Nav>
       </Navbar.Collapse>
     </Navbar>
+    </>
   );
 };
 
