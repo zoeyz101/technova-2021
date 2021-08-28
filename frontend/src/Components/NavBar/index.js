@@ -11,7 +11,7 @@ const NavBar = () => {
       <Navbar.Brand href="/">
         <img
           src={Image}
-          width="200"
+          width="250"
           height="75"
           className="d-inline-block align-top"
           alt="AccomplishWomen+ Logo"
