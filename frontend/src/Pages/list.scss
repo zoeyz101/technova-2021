@@ -1,7 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;600&display=swap');
+
 .list {
   padding-top: 75px;
   background: #dff6fb;
 }
-body {
+.list-page{
   background: #dff6fb;
+  height:100vh;
+}
+
+#cards {
+  font-family: 'Poppins', sans-serif;
+  font-style: normal;
+  font-weight:200;
+  margin-top:40px;
 }

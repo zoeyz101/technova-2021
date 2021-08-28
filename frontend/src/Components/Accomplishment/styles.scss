@@ -3,4 +3,38 @@
   box-sizing: border-box;
   border-radius: 7px;
   background: #ffffff;
+  height: 130px;
+  width: 250px;
+}
+
+.type-button {
+  font-size:2.0vh;
+  margin-top:5%;
+  margin-right:0%;
+  padding-left:15px;
+  padding-right:15px;
+  padding-top:2px;
+  padding-bottom:2px;
+  float:right;
+  background-color:#F2C94C;
+  border:none;
+}
+
+.title {
+  padding-top:10px;
+  margin-left:0px;
+  font-weight:600;
+  font-size:2.1vh;
+}
+
+.date {
+  font-size:1.7vh;
+  margin-top:0;
+  color:gray;
+  font-weight:200;
+}
+
+.card-description {
+  font-size:1.8vh;
+  font-weight:300;
 }

@@ -8,7 +8,7 @@ import "./list.scss";
 const List = () =>{
     const sample_accomplishment = {
         title: "Dean's List",
-        type: "Awards",
+        type: "AWARDS",
         date: "12/18/21",
         description: "test text"
     }
@@ -16,7 +16,7 @@ const List = () =>{
     const accomplishment_list = [sample_accomplishment, sample_accomplishment, sample_accomplishment, sample_accomplishment, sample_accomplishment, sample_accomplishment ]
 
     return (
-        <>
+        <body className="list-page">
         <NavBar />
         <Container className="list">
             <Row>
@@ -30,7 +30,7 @@ const List = () =>{
                     <Button>Add New</Button>
                 </Col>
             </Row>
-            <Row xs={1} md={4} className="g-4">
+            <Row xs={1} md={4} className="g-4" id="cards">
                {
                    accomplishment_list.map((accomplishment, index) =>(
                     <Col>
@@ -40,7 +40,7 @@ const List = () =>{
                }
             </Row>
         </Container>
-        </>
+        </body>
     );
 }
 
