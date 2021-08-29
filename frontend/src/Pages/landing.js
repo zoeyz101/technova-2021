@@ -59,9 +59,9 @@ const Landing = () => {
                 <Modal.Body className = "login" >
                     <img src={Equality} className="equality-image" alt="Everyone in Equality"/> 
                     <Form className = "form" validated={validated} onSubmit={handleSubmit}>
-                        <Form.Group className="mb-3" controlId="formBasicEmail" alt="Enter your email" >
+                        <Form.Group className="mb-3" controlId="formBasicUser" alt="Enter your username" >
                         <InputGroup hasValidation>
-                            <Form.Control required type="email" placeholder="Enter your email" />
+                            <Form.Control required type="name" placeholder="Enter your username" />
                         </InputGroup>
                         </Form.Group>
 
@@ -95,6 +95,12 @@ const Landing = () => {
                         <Form.Group className="mb-3" controlId="formBasicEmail" alt="Enter your email">
                         <InputGroup hasValidation>
                             <Form.Control required type="email" placeholder="Enter your email" />
+                        </InputGroup>
+                        </Form.Group>
+
+                        <Form.Group className="mb-3" controlId="formBasicPassword" alt="Enter your username">
+                        <InputGroup hasValidation>
+                            <Form.Control required type="password" placeholder="Enter your username" />
                         </InputGroup>
                         </Form.Group>
 
