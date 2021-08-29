@@ -42,7 +42,29 @@ body {
 .join-now-button {
   font-family: "Poppins", sans-serif;
   font-style: normal;
-  margin-top:5%;
+  margin-top: 5%;
   font-weight: 600;
   font-size: 3.5vh;
+}
+
+.signUp {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  .equality-image {
+    height: 20vh;
+    margin-bottom: 10px;
+  }
+  .form {
+    text-align: center;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+  }
+  .button {
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    background-color: #d7b0f5;
+    border-color: #d7b0f5;
+  }
 }

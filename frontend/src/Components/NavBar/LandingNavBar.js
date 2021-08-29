@@ -5,7 +5,7 @@ import Navbar from "react-bootstrap/Navbar";
 import Image from "../../Images/logo.png";
 import Button from "react-bootstrap/Button";
 
-const NavBar = () => {
+const NavBar = ({isLogin, isSignUp}) => {
   return (
     <Navbar collapseOnSelect expand="lg" bg="" variant="light" fixed="top" className="navbar">
       <Navbar.Brand href="/">
@@ -23,8 +23,8 @@ const NavBar = () => {
         className="justify-content-end"
       >
         <Nav>
-          <Nav.Link href="/Home">LOGIN</Nav.Link>
-          <Button href="#" variant="dark">JOIN NOW</Button>
+          <Nav.Link onClick={isLogin}>LOGIN</Nav.Link>
+          <Button onClick={isSignUp} variant="dark">JOIN NOW</Button>
         </Nav>
       </Navbar.Collapse>
     </Navbar>
