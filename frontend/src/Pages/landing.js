@@ -4,7 +4,6 @@ import "./landing.scss";
 import { Container, Row, Col, Button, Modal} from 'react-bootstrap';
 import Image from "../Images/landing-page-image.svg";
 import Typewriter from "typewriter-effect";
-//npm install --save typewriter-effect
 
 const Landing = () => {
 
