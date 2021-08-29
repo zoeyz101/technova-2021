@@ -1,34 +1,32 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;600&display=swap");
 
 .list {
   padding-top: 75px;
   background: #dff6fb;
 }
-.list-page{
+.list-page {
   background: #dff6fb;
-  height:100vh;
+  height: 100vh;
 }
 
 #cards {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-style: normal;
-  font-weight:200;
-  margin-top:-10px;
+  font-weight: 200;
+  margin-top: -10px;
 }
 
-.addNewContain{
-  justify-content: right;
-  padding-left: 44vh;
-  margin-top: 30px;
-}
-
-#addNew{
-  font-family: 'Poppins', sans-serif;
+#addNew {
+  font-family: "Poppins", sans-serif;
   font-size: 15px;
-  background-color: #A365D5;
-  border-color: #A365D5;
+  background-color: #a365d5;
+  border-color: #a365d5;
 }
-.shortBox{
+.shortBox {
   margin-left: -1vh;
   margin-top: 5vh;
+}
+
+.dropdowns {
+  align-items: flex-end;
 }

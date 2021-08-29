@@ -6,7 +6,7 @@ import Select from 'react-select'
 //npm i --save react-select
 import "./list.scss";
 
-var multiSelect = [
+const multiSelect = 
     {
       id: "types",
       placeholder: "Select Types...",
@@ -18,19 +18,17 @@ var multiSelect = [
         { value: "Volunteer", label: "Volunteer" },
         { value: "Work/Education", label: "Work/Education" },
       ],
-    },
-];
+    };
 
-var sortSelect = [
+const sortSelect = 
     {
       id: "sort by",
       placeholder: "Sort By...",
       options: [
         { value: "Type", label: "Type" },
-        { value: "Date", label: "Date" },,
+        { value: "Date", label: "Date" },
       ],
-    },
-];
+    };
 
 const List = () =>{
     const sample_accomplishment = {
@@ -42,44 +40,37 @@ const List = () =>{
 
     const accomplishment_list = [sample_accomplishment, sample_accomplishment, sample_accomplishment, sample_accomplishment, sample_accomplishment, sample_accomplishment ]
 
+    const selectedAccomplishments = (selected) => {
+        let value = Array.from(selected.target.selectedOptions, option => option.value);
+        }
+
     return (
         <body className="list-page">
         <NavBar />
         <Container className="list">
-            <Row>
+            <Row className="dropdowns">
                 <Col sm={4}>
-                    {multiSelect.map((field) => (
-                        <Row className="shortBox">
-                        <Select 
-                            isMulti={field.isMulti} 
-                            options={field.options}
-                            placeholder={field.placeholder}
-                            handleChange = {(e) => {
-                                let value = Array.from(e.target.selectedOptions, option => option.value);
-                                this.setState({values: value});
-                              }}
-                        />
-                        </Row>
-                    ))}
+                    <Select 
+                        isMulti={multiSelect.isMulti} 
+                        options={multiSelect.options}
+                        placeholder={multiSelect.placeholder}
+                        handleChange = {selectedAccomplishments}
+                    />
                 </Col>
                 <Col sm={4}>
-                    {sortSelect.map((field) => (
-                        <Row className="shortBox">
-                        <Select
-                            options={field.options}
-                            placeholder={field.placeholder}
-                            handleChange={(value) => {
-                                this.setState({ value: value.value });
-                              }}
-                        />
-                        </Row>
-                    ))}
+                    <Select
+                        options={sortSelect.options}
+                        placeholder={sortSelect.placeholder}
+                        handleChange={(value) => {
+                            this.setState({ value: value.value });
+                            }}
+                    />
                 </Col>
-                <Col sm={4} className="addNewContain">
+                <Col sm={4} >
                     <Button id="addNew">+ Add New</Button>
                 </Col>
             </Row>
-            <Row xs={1} md={4} className="g-4" id="cards">
+            <Row xs={1} md={2} lg={4} className="g-4" id="cards">
                {
                    accomplishment_list.map((accomplishment, index) =>(
                     <Col>
