@@ -3,7 +3,6 @@ import NavBar from "../Components/NavBar";
 import Accomplishment from "../Components/Accomplishment"
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import Select from 'react-select'
-//npm i --save react-select
 import "./list.scss";
 
 const multiSelect = 
@@ -39,7 +38,7 @@ const List = () =>{
         title: "Dean's List",
         type: "Personal Life",
         date: '2019-09-15',
-        description: "test text"
+        description: "test text aaaaaa aaaaa aaaaaaaaaaaaaaaa aa        aaaaaaaa aaaaa aaa aaaaaa aaaaaaaaaaaa  aaaaaaaaaa aaaaaaaaaaaaa aaaaaaaaa aaaaaaaaaaaaaaaa aaaaaaaaaaaaaa aaaaa aaaaaaaaaaaaaa aaaaaa aaaaaaaaaa aaa aaaaaaaaaaaa"
     }
     const originalList = [sample_accomplishment, sample_accomplishment2, sample_accomplishment, sample_accomplishment2, sample_accomplishment, sample_accomplishment]
 
@@ -74,14 +73,12 @@ const List = () =>{
                 // equal types
                 return 0;
             })
-            console.log("sort by type:", sortedList)
         }else if (sort === "Date"){
             sortedList = sortedList.sort((a, b) =>{
                 const dateA = new Date(a.date)
                 const dateB = new Date(b.date)
                 return dateB - dateA
             })
-            console.log("sort by date:", sortedList)
         }
         setList([...sortedList])
         console.log (accomplishment_list)

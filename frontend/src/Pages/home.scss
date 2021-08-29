@@ -1,111 +1,50 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;600&display=swap");
 
-.top-components {
-    font-family: "Poppins", sans-serif;
-    font-style: normal;
-    padding-top:8%;
-    margin-left:8%;
-    font-weight:600;
-    font-size:2.3vh;
-    margin-left:-5%;
+.top {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  padding-top: 100px;
+  font-weight: 500;
+  font-size: 2.5vh;
 }
 
-.bottom-components {
-    font-family: "Poppins", sans-serif;
-    font-style: normal;
-    padding-top:0%;
-    margin-left:8%;
-    font-weight:600;
-    font-size:2.3vh;
-    margin-left:-5%;
+.achievement-title {
+  margin-left: 22px;
 }
-
 .past-achievements {
-    box-sizing: border-box;
-    border-radius: 7px;
-    background: #ffffff;
-    height: 300px;
-    width:30%;
-    
+  background: #ffffff;
+  height: 30vh;
+  overflow-y: auto;
+  margin: 10px;
+  padding: 10px;
 }
 
+.affirmation-title {
+  margin-left: 22px;
+}
 .daily-affirmation {
-    border-radius: 7px;
-    background: #ffffff;
-    width: 98%;
-    height:200px;
-    justify-content:center;
-}
-
-.news-feed {
-    margin-left:5%;
-    margin-top:-3%;
-
-}
-.news {
-    height: 140px;
-    width: 100%;
-    margin-bottom:3.5%;
-    border-radius: 7px;
-    background: #ffffff;
-}
-
-.news-handle {
-    color:rgba(122, 78, 157, 1);
-    font-size:1.8vh;
-}
-
-.news-date {
-    background-color:#72C795;
-    color:white;
-    padding-left:15px;
-    padding-right:15px;
-    justify-content:right;
-    border-radius:7px;
+  background: #ffffff;
+  height: 30vh;
+  overflow-y: auto;
+  margin: 10px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
 }
 
 .news-title {
-    width:50rem;
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 2.5vh;
+  margin-left: 22px;
+  margin-top: 10px;
 }
 
-.news-card-description{
-    font-weight:200px;
+.news {
+  background: #ffffff;
+  margin: 10px;
+  padding: 10px;
+  height: 30vh;
+  overflow-y: auto;
 }
-
-
-.home-type-button {
-    font-size:2vh;
-    margin-top:5%;
-    margin-right:5%;
-    padding-left:15px;
-    padding-right:15px;
-    padding-top:2px;
-    padding-bottom:2px;
-    float:right;
-    background-color:#F2C94C;
-    border:none;
-}
-
-.home-title {
-    padding-top: 4%;
-    padding-left: 2%;
-    font-weight:600;
-    font-size: 2.7vh;
-}
-
-.home-date {
-    font-size:2vh;
-    padding-top:1%;
-    padding-left: 2%;
-    color:gray;
-    font-weight:200;
-}
-
-.home-card-description {
-    font-size:2.1vh;
-    padding-top:2%;
-    padding-left: 4%;
-    width: 95%;
-    font-weight:300;
-}
-

@@ -1,62 +1,85 @@
 import React from "react";
 import NavBar from "../Components/NavBar";
+import News from "../Components/Newsfeed";
+import Past from "../Components/Past";
+
 import "./home.scss";
-import { Container, Row, Col, Button } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 
 
 const Home = () =>{
     return (
         <Container> 
             <NavBar /> 
-            <Row className="top-components">
-            <p>A LOOK AT YOUR PAST ACHIEVEMENTS</p>
-                <Col className = "past-achievements">
-                    <Button className="home-type-button">PERSONAL</Button>
-                    <Row className="home-title">
-                        Made a New Friend
-                    </Row>
-                    <Row className="home-date">
-                        12/18/21
-                    </Row>
-                    <Row className="home-card-description">
-                        Their name is Matt. He is a Starbucks barista with too much time on his hands and too little energy to do anything about ththat Their name is Matt. He is a Starbucks barista with too much time on his hands and too little energy to do anything about ththat Their name is Matt. He is a Starbucks barista with too much time on his hands and too little energy to do anything about ththat
-                    </Row>
+            <Row className="top">
+                <Col sm={4}>
+                    <div className ="affirmation-title">
+                        DAILY AFFIRMATION
+                    </div>
+                    <div className="daily-affirmation">
+                        You don’t have to wait to be confident. Just do it and eventually the confidence will follow. <br></br>- Carrie Fisher
+                    </div>
                 </Col>
-                
-                <Col className="news-feed">
-                <p>NEWS FEED</p>
-                    <Row className="news">
-                        <Row className="news-handle">
-                            @misasi.olivia
-                        </Row>
-                        <Row>
-                            <Col className="news-title">
-                                Wind Turbine Appreciation Award
-                            </Col>
-
-                            <Col className="news-date">
-                                18/05/21
-                            </Col>
-                        </Row>
-                        <Row className="news-card-description">
-                            Wind turbines are really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really cool 8)
-                        </Row>
-                    </Row>
-                    <Row className="news">
-
-                    </Row>
+                <Col>
+                    <div className="achievement-title">
+                        A LOOK AT YOUR PAST ACHIEVEMENTS
+                    </div>
+                    <div className="past-achievements">
+                        {past.map((input)=>(
+                        <Past title = {input.title} date  = {input.date} description = {input.description}/>
+                        ))}
+                    </div>
+                    
                 </Col>
             </Row>
-            
-            <Row  className="bottom-components">
-                <p>DAILY AFFIRMATION</p>
-                <div className="daily-affirmation">
-                    <p>You don’t have to wait to be confident. Just do it and eventually the confidence will follow. <br></br>- Carrie Fisher</p>
-                </div>
-                
+            <Row className="news-title">
+                NEWS FEED
             </Row>
+            <div className="news">
+                {news.map((input)=>(
+                    <News user ={input.user} title = {input.title} date  = {input.date} description = {input.description}/>
+                ))}
+            </div>
         </Container>
     );
 }
 
+const news = [
+    {
+        user: "misasi.olivia",
+        title: "Wind Turbine Appreciation Award",
+        date: "18/05/21",
+        description: "Wind turbines are really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really cool 8)"
+    },
+    {
+        user: "misasi.olivia",
+        title: "Wind Turbine Appreciation Award",
+        date: "18/05/21",
+        description: "Wind turbines are really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really cool 8)"
+    }, 
+    {
+        user: "misasi.olivia",
+        title: "Wind Turbine Appreciation Award",
+        date: "18/05/21",
+        description: "Wind turbines are really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really cool 8)"
+    }
+]
+
+const past = [
+    {
+        title: "Made a New Friend",
+        date: "12/18/21",
+        description: "Their name is Matt. He is a Starbucks barista with too much time on his hands and too little energy to do anything about ththat Their name is Matt. He is a Starbucks barista with too much time on his hands and too little energy to do anything about ththat Their name is Matt. He is a Starbucks barista with too much time on his hands and too little energy to do anything about ththat"
+    },
+    {
+        title: "Made a New Friend",
+        date: "12/18/21",
+        description: "Their name is Matt. He is a Starbucks barista with too much time on his hands and too little energy to do anything about ththat Their name is Matt. He is a Starbucks barista with too much time on his hands and too little energy to do anything about ththat Their name is Matt. He is a Starbucks barista with too much time on his hands and too little energy to do anything about ththat",
+    },
+    {
+        title: "Made a New Friend",
+        date: "12/18/21",
+        description: "Their name is Matt. He is a Starbucks barista with too much time on his hands and too little energy to do anything about ththat Their name is Matt. He is a Starbucks barista with too much time on his hands and too little energy to do anything about ththat Their name is Matt. He is a Starbucks barista with too much time on his hands and too little energy to do anything about ththat"
+    }
+]
 export default Home;
