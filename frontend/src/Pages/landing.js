@@ -64,13 +64,11 @@ const Landing = () => {
                             <Form.Control required type="name" placeholder="Enter your username" />
                         </InputGroup>
                         </Form.Group>
-
                         <Form.Group className="mb-3" controlId="formBasicPassword" alt="Enter your password">
                         <InputGroup hasValidation>
                             <Form.Control required type="password" placeholder="Enter your password" />
                         </InputGroup>
                         </Form.Group>
-
                         <Button variant="primary" 
                             className="button" 
                             type="submit" 

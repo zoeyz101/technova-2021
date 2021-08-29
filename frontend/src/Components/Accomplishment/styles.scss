@@ -1,40 +1,46 @@
 .accomplishment {
   border: 1px solid #000000;
   box-sizing: border-box;
-  border-radius: 7px;
   background: #ffffff;
-  height: 130px;
-  width: 250px;
+  width: 100%;
+  height: 100%;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
 }
 
-.type-button {
-  font-size:2.0vh;
-  margin-top:5%;
-  margin-right:0%;
-  padding-left:15px;
-  padding-right:15px;
-  padding-top:2px;
-  padding-bottom:2px;
-  float:right;
-  background-color:#F2C94C;
-  border:none;
+#type-button-award {
+  background-color: #f2c94c;
+  border-radius: 7px;
+  margin-bottom: 0.5rem;
+}
+#type-button-personal {
+  background-color: #72c795;
+  border-radius: 7px;
+  margin-bottom: 0.5rem;
+}
+#type-button-volunteer {
+  background-color: #56ccf2;
+  border-radius: 7px;
+  margin-bottom: 0.5rem;
+}
+#type-button-work {
+  background-color: #bd83eb;
+  border-radius: 7px;
+  margin-bottom: 0.5rem;
 }
 
 .title {
-  padding-top:10px;
-  margin-left:0px;
-  font-weight:600;
-  font-size:2.1vh;
+  font-weight: 600;
+  font-size: 2.1vh;
 }
 
 .date {
-  font-size:1.7vh;
-  margin-top:0;
-  color:gray;
-  font-weight:200;
+  font-size: 1.7vh;
+  color: gray;
+  font-weight: 200;
 }
 
 .card-description {
-  font-size:1.8vh;
-  font-weight:300;
+  font-size: 1.8vh;
+  font-weight: 300;
 }
