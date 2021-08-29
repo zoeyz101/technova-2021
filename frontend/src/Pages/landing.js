@@ -19,10 +19,10 @@ const Landing = () => {
                     <Row className="description">
                     <Typewriter
                             onInit={(typewriter) => {
-                                typewriter.typeString('Overcoming imposter syndrome by tracking one accomplishment')
+                                typewriter.typeString('Overcoming imposter syndrome by tracking one accomplishment.')
                                 .pauseFor(1500)
-                                .deleteChars(4)
-                                typewriter.typeString('Women+ at a time')
+                                .deleteChars(5)
+                                typewriter.typeString('Women+ at a time.')
                                 .start();
                             }}
                             />
@@ -30,7 +30,7 @@ const Landing = () => {
                     <Row>
                         <Button 
                             variant="dark"
-                            oncClick={handleShow}
+                            onClick={handleShow}
                             className="join-now-button"
                         > JOIN NOW</Button>
                     </Row>
