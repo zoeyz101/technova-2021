@@ -4,6 +4,7 @@ import { Route, Switch, BrowserRouter as Router } from "react-router-dom";
 import Landing from "./Pages/landing";
 import Home from "./Pages/home";
 import List from "./Pages/list"
+import Groups from "./Pages/groups"
 
 
 export default class App extends Component{
@@ -16,6 +17,7 @@ export default class App extends Component{
             <Route exact path="/" component={Landing} />
             <Route path="/home" component={Home} />
             <Route path="/list" component={List} />
+            <Route path="/groups" component={Groups} />
           </Switch>
         </Router>
       </>
