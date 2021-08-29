@@ -83,7 +83,7 @@ const List = () =>{
             })
             console.log("sort by date:", sortedList)
         }
-        setList(sortedList)
+        setList([...sortedList])
         console.log (accomplishment_list)
     }
 
