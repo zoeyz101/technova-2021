@@ -69,7 +69,8 @@ const Landing = () => {
                             <Form.Control required type="password" placeholder="Enter your password" />
                         </InputGroup>
                         </Form.Group>
-                        <Button variant="primary" 
+                        <Button variant="primary"
+                            href="/Home" 
                             className="button" 
                             type="submit" 
                             alt="Login Button"
@@ -112,7 +113,8 @@ const Landing = () => {
                             <Form.Control required type="password" placeholder="Re-Enter your password" />
                         </Form.Group>
 
-                        <Button variant="primary" 
+                        <Button variant="primary"
+                            href="/Home"
                             className="button" 
                             type="submit" 
                             alt="Sign Up Button"

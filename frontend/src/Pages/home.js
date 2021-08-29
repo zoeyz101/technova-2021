@@ -26,7 +26,7 @@ const Home = () =>{
                     </div>
                     <div className="past-achievements">
                         {past.map((input)=>(
-                        <Past title = {input.title} date  = {input.date} description = {input.description}/>
+                        <><br></br><Past title = {input.title} date  = {input.date} description = {input.description}/><br></br></>
                         ))}
                     </div>
                     
@@ -37,7 +37,7 @@ const Home = () =>{
             </Row>
             <div className="news">
                 {news.map((input)=>(
-                    <News user ={input.user} title = {input.title} date  = {input.date} description = {input.description}/>
+                    <><br></br><News user ={input.user} title = {input.title} date  = {input.date} description = {input.description}/><br></br></>
                 ))}
             </div>
         </Container>
@@ -49,19 +49,19 @@ const news = [
         user: "misasi.olivia",
         title: "Wind Turbine Appreciation Award",
         date: "18/05/21",
-        description: "Wind turbines are really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really cool 8)"
+        description: "Wind turbines are really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really cool 8)\n\n" 
     },
     {
         user: "misasi.olivia",
         title: "Wind Turbine Appreciation Award",
         date: "18/05/21",
-        description: "Wind turbines are really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really cool 8)"
+        description: "Wind turbines are really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really cool 8)\n\n"
     }, 
     {
         user: "misasi.olivia",
         title: "Wind Turbine Appreciation Award",
         date: "18/05/21",
-        description: "Wind turbines are really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really cool 8)"
+        description: "Wind turbines are really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really cool 8)\n\n"
     }
 ]
 
