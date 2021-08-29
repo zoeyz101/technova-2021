@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import NavBar from "../Components/NavBar";
 import Accomplishment from "../Components/Accomplishment"
-import { Container, Row, Col, Button } from 'react-bootstrap';
+import { Container, Row, Col, Button, Modal, Form, InputGroup} from 'react-bootstrap';
 import Select from 'react-select'
 //npm i --save react-select
 import "./list.scss";
@@ -29,6 +29,21 @@ const sortSelect =
     };
 
 const List = () =>{
+    const [showAdd, setAddShow] = useState(false);
+    const handleAddClose = () => setAddShow(false);
+    const handleAddShow = () => setAddShow(true);
+
+    const [validated, setValidated] = useState(false);
+    const handleSubmit = (event) => {
+        const form = event.currentTarget;
+        if (form.checkValidity() === false) {
+            event.preventDefault();
+            event.stopPropagation();
+        }
+        setValidated(true);
+    }
+
+
     const sample_accomplishment = {
         title: "Dean's List",
         type: "Award",
@@ -108,7 +123,7 @@ const List = () =>{
                     />
                 </Col>
                 <Col sm={4} >
-                    <Button id="addNew">+ Add New</Button>
+                    <Button id="addNew" onClick = {handleAddShow}>+ Add New</Button>
                 </Col>
             </Row>
             <Row xs={1} md={2} lg={4} className="g-4" id="cards">
@@ -120,6 +135,50 @@ const List = () =>{
                    ))
                }
             </Row>
+            <Modal centered show={showAdd} onHide={handleAddClose}>
+                <Modal.Body className = "addNewModal" >
+                    <Modal.Title className="addHeading">YOUR NEW ACCOMPLISHMENT</Modal.Title>
+                    <Form className = "form" validated={validated} onSubmit={handleSubmit}>
+                        <Form.Group className="mb-3" controlId="formBasicTitle" alt="Accomplishment Title" >
+                        <InputGroup hasValidation>
+                            <Form.Control required type="name" placeholder="Accomplishment Title" />
+                        </InputGroup>
+                        </Form.Group>
+
+                        <Form.Group className="mb-3" controlId="formBasicDate" alt="Date">
+                        <InputGroup hasValidation>
+                            <Form.Control required type="name" placeholder="MM / DD / YYYY" />
+                        </InputGroup>
+                        </Form.Group>
+
+
+                        <Form.Group className="mb-3" controlId="formSelectType">
+                        <Form.Control
+                        as="select">
+                        <option value="" disabled selected>Type of Accomplishment</option>
+                            <option value="Award">Award</option>
+                            <option value="Personal">Personal Life</option>
+                            <option value="Volunteer">Volunteer</option>
+                            <option value="Work/Education">Work/Education</option>
+                        </Form.Control>
+                        </Form.Group>
+
+                        <Form.Group className="mb-3" controlId="formBasicDesc" alt="Description">
+                        <InputGroup hasValidation>
+                            <Form.Control required type = "string" as = "textarea" rows= {4} placeholder="Description..." />
+                        </InputGroup>
+                        </Form.Group>
+
+                        <Button variant="primary" 
+                            className="button" 
+                            type="submit" 
+                            alt="Add New Button"
+                            onClick={handleSubmit}>
+                            +ADD
+                        </Button>
+                    </Form>
+                </Modal.Body>
+            </Modal>
         </Container>
         </body>
     );
