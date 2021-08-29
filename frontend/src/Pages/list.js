@@ -47,15 +47,21 @@ const List = () =>{
         title: "Dean's List",
         type: "Award",
         date: '2020-09-15',
-        description: "test text"
+        description: "I made the Dean's List!"
     }
     const sample_accomplishment2 = {
-        title: "Dean's List",
-        type: "Personal Life",
+        title: "Trevor Project",
+        type: "Volunteer",
         date: '2019-09-15',
-        description: "test text aaaaaa aaaaa aaaaaaaaaaaaaaaa aa        aaaaaaaa aaaaa aaa aaaaaa aaaaaaaaaaaa  aaaaaaaaaa aaaaaaaaaaaaa aaaaaaaaa aaaaaaaaaaaaaaaa aaaaaaaaaaaaaa aaaaa aaaaaaaaaaaaaa aaaaaa aaaaaaaaaa aaa aaaaaaaaaaaa"
+        description: "I volunteered at the Trevor Project and got to talk to a bunch of kids who are LGBTQ+! It was so cool to meet more people in my community!"
     }
-    const originalList = [sample_accomplishment, sample_accomplishment2, sample_accomplishment, sample_accomplishment2, sample_accomplishment, sample_accomplishment]
+    const sample_accomplishment3 = {
+        title: "EngSoc AdComm S21",
+        type: "Work/Education",
+        date: '2021-05-15',
+        description: "I got the EngSoc commissionership I've been wanting for a year!"
+    }
+    const originalList = [sample_accomplishment, sample_accomplishment2, sample_accomplishment, sample_accomplishment3, sample_accomplishment2, sample_accomplishment]
 
     const [accomplishment_list, setList] = useState(originalList)
     const selectedAccomplishments = (selected) => {

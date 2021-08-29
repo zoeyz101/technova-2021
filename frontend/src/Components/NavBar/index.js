@@ -1,7 +1,6 @@
 import React from "react";
 import "./styles.scss";
-import Nav from "react-bootstrap/Nav";
-import Navbar from "react-bootstrap/Navbar";
+import {Nav, Navbar, Button} from "react-bootstrap";
 import Image from "../../Images/logo.png";
 
 const NavBar = () => {
@@ -27,7 +26,7 @@ const NavBar = () => {
           <Nav.Link href="/list">THE LIST</Nav.Link>
           <Nav.Link href="/groups">GROUPS</Nav.Link>
           <Nav.Link href="#">RESOURCES</Nav.Link>
-          <Nav.Link href="#">SETTINGS</Nav.Link>
+          <Button href="/?" variant="dark">LOG OUT</Button>
         </Nav>
       </Navbar.Collapse>
     </Navbar>
