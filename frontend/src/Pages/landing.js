@@ -3,6 +3,8 @@ import NavBar from "../Components/NavBar/LandingNavBar";
 import "./landing.scss";
 import { Container, Row, Col, Button, Modal} from 'react-bootstrap';
 import Image from "../Images/landing-page-image.svg";
+import Typewriter from "typewriter-effect";
+//npm install --save typewriter-effect
 
 const Landing = () => {
 
@@ -14,9 +16,17 @@ const Landing = () => {
         <Container>
             <NavBar />
             <Row className = "landing">
-                <Col sm={6} className = "slogan">
+                <Col sm={5} className = "slogan">
                     <Row className="description">
-                        Overcoming imposter syndrome by tracking one accomplishWomen+ at a time.
+                    <Typewriter
+                            onInit={(typewriter) => {
+                                typewriter.typeString('Overcoming imposter syndrome by tracking one accomplishment')
+                                .pauseFor(1500)
+                                .deleteChars(4)
+                                typewriter.typeString('Women+ at a time')
+                                .start();
+                            }}
+                            />
                     </Row>
                     <Row>
                         <Button 
@@ -26,7 +36,7 @@ const Landing = () => {
                         > JOIN NOW</Button>
                     </Row>
                 </Col>
-                <Col sm={6} >
+                <Col sm={6}>
                     <img src={Image} className="landing-image" alt="Women Allies"/>
                 </Col> 
             </Row>
