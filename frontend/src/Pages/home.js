@@ -1,12 +1,19 @@
 import React from "react";
 import NavBar from "../Components/NavBar";
+import { Container, Row, Col, Button } from 'react-bootstrap';
 
 
 const Home = () =>{
     return (
-        <>
-            <NavBar />
-        </>
+        <Container> 
+            <NavBar /> 
+            <Row>
+
+            </Row>
+            <Row>
+                
+            </Row>
+        </Container>
     );
 }
 
