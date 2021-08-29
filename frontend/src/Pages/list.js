@@ -147,21 +147,25 @@ const List = () =>{
 
                         <Form.Group className="mb-3" controlId="formBasicDate" alt="Date">
                         <InputGroup hasValidation>
-                            <Form.Control required type="date" placeholder="MM / DD / YYYY" />
+                            <Form.Control required type="name" placeholder="MM / DD / YYYY" />
                         </InputGroup>
                         </Form.Group>
 
-                        <Form.Select className="mb-3" controlId="formType" aria-label="Select Type" 
-                        placeholder="Type of Accomplishment">
+
+                        <Form.Group className="mb-3" controlId="formSelectType">
+                        <Form.Control
+                        as="select">
+                        <option value="" disabled selected>Type of Accomplishment</option>
                             <option value="Award">Award</option>
                             <option value="Personal">Personal Life</option>
                             <option value="Volunteer">Volunteer</option>
                             <option value="Work/Education">Work/Education</option>
-                        </Form.Select>
+                        </Form.Control>
+                        </Form.Group>
 
                         <Form.Group className="mb-3" controlId="formBasicDesc" alt="Description">
                         <InputGroup hasValidation>
-                            <Form.Control required type="textarea" rows= {4} placeholder="Description..." />
+                            <Form.Control required type = "string" as = "textarea" rows= {4} placeholder="Description..." />
                         </InputGroup>
                         </Form.Group>
 
@@ -170,7 +174,7 @@ const List = () =>{
                             type="submit" 
                             alt="Add New Button"
                             onClick={handleSubmit}>
-                            Log In
+                            +ADD
                         </Button>
                     </Form>
                 </Modal.Body>
