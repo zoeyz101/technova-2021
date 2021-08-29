@@ -24,8 +24,7 @@ const Landing = () => {
             event.stopPropagation();
         }
         setValidated(true);
-    };
-    
+    }
 
     return (
         <Container>
@@ -76,7 +75,7 @@ const Landing = () => {
                             className="button" 
                             type="submit" 
                             alt="Login Button"
-                            >
+                            onClick={handleSubmit}>
                             Log In
                         </Button>
                     </Form>
@@ -89,7 +88,7 @@ const Landing = () => {
                     <Form className = "form" validated={validated} onSubmit={handleSubmit}>
                         <Form.Group className="mb-3" controlId="formBasicName" alt="Enter your name">
                         <InputGroup hasValidation>
-                            <Form.Control required type="email" placeholder="Enter your name" />
+                            <Form.Control required type="name" placeholder="Enter your name" />
                         </InputGroup>
                         </Form.Group>
 
@@ -112,7 +111,8 @@ const Landing = () => {
                         <Button variant="primary" 
                             className="button" 
                             type="submit" 
-                            alt="Sign Up Button">
+                            alt="Sign Up Button"
+                            onClick={handleSubmit}>
                             Sign Up
                         </Button>
                     </Form>
