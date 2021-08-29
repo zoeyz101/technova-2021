@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import NavBar from "../Components/NavBar";
 import Accomplishment from "../Components/Accomplishment"
 import { Container, Row, Col, Button } from 'react-bootstrap';
@@ -10,9 +10,7 @@ const multiSelect =
     {
       id: "types",
       placeholder: "Select Types...",
-      isMulti: true,
       options: [
-        { value: "All", label: "All" },
         { value: "Award", label: "Award" },
         { value: "Personal Life", label: "Personal Life" },
         { value: "Volunteer", label: "Volunteer" },
@@ -33,16 +31,61 @@ const sortSelect =
 const List = () =>{
     const sample_accomplishment = {
         title: "Dean's List",
-        type: "AWARDS",
-        date: "12/18/21",
+        type: "Award",
+        date: '2020-09-15',
         description: "test text"
     }
+    const sample_accomplishment2 = {
+        title: "Dean's List",
+        type: "Personal Life",
+        date: '2019-09-15',
+        description: "test text"
+    }
+    const originalList = [sample_accomplishment, sample_accomplishment2, sample_accomplishment, sample_accomplishment2, sample_accomplishment, sample_accomplishment]
 
-    const accomplishment_list = [sample_accomplishment, sample_accomplishment, sample_accomplishment, sample_accomplishment, sample_accomplishment, sample_accomplishment ]
-
+    const [accomplishment_list, setList] = useState(originalList)
     const selectedAccomplishments = (selected) => {
-        let value = Array.from(selected.target.selectedOptions, option => option.value);
+        let newSelect = []
+        selected.forEach(
+            option => {
+                newSelect.push(option.label);
+              })
+        if (newSelect.length===0){
+            setList(originalList)
+        }else{
+            setList(originalList.filter((accomplishment =>{
+                return newSelect.includes(accomplishment.type)
+            })))
         }
+    }
+    
+    const sortAccomplishments = (selected) => {
+        const sort = selected.label
+        let sortedList = accomplishment_list;
+        if (sort === "Type"){
+            sortedList = sortedList.sort((a, b) =>{
+                const typeA = a.type
+                const typeB = b.type
+                if (typeA < typeB) {
+                  return -1;
+                } else if (typeA > typeB) {
+                  return 1;
+                }
+                // equal types
+                return 0;
+            })
+            console.log("sort by type:", sortedList)
+        }else if (sort === "Date"){
+            sortedList = sortedList.sort((a, b) =>{
+                const dateA = new Date(a.date)
+                const dateB = new Date(b.date)
+                return dateB - dateA
+            })
+            console.log("sort by date:", sortedList)
+        }
+        setList(sortedList)
+        console.log (accomplishment_list)
+    }
 
     return (
         <body className="list-page">
@@ -51,19 +94,17 @@ const List = () =>{
             <Row className="dropdowns">
                 <Col sm={4}>
                     <Select 
-                        isMulti={multiSelect.isMulti} 
+                        isMulti
                         options={multiSelect.options}
                         placeholder={multiSelect.placeholder}
-                        handleChange = {selectedAccomplishments}
+                        onChange = {selectedAccomplishments}
                     />
                 </Col>
                 <Col sm={4}>
                     <Select
                         options={sortSelect.options}
                         placeholder={sortSelect.placeholder}
-                        handleChange={(value) => {
-                            this.setState({ value: value.value });
-                            }}
+                        onChange={sortAccomplishments}
                     />
                 </Col>
                 <Col sm={4} >
@@ -72,9 +113,9 @@ const List = () =>{
             </Row>
             <Row xs={1} md={2} lg={4} className="g-4" id="cards">
                {
-                   accomplishment_list.map((accomplishment, index) =>(
+                   accomplishment_list.map((accomplishment) =>(
                     <Col>
-                        <Accomplishment title={accomplishment["title"]} type={accomplishment["type"]} date={accomplishment["date"]} description={accomplishment["description"]} />
+                        <Accomplishment title={accomplishment["title"]} type={accomplishment["type"]} date={accomplishment["date"]} description={accomplishment["description"]}/>
                     </Col>
                    ))
                }
