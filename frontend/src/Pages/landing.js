@@ -1,19 +1,24 @@
-import React, {useState, setShow, styled} from "react";
+import React, {useState} from "react";
 import NavBar from "../Components/NavBar/LandingNavBar";
 import "./landing.scss";
-import { Container, Row, Col, Button, Modal} from 'react-bootstrap';
+import { Container, Row, Col, Button, Modal, Form} from 'react-bootstrap';
 import Image from "../Images/landing-page-image.svg";
+import Equality from "../Images/equality.svg";
 import Typewriter from "typewriter-effect";
 
 const Landing = () => {
 
-    const [show, setShow] = useState(false);
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
+    const [showLogin, setLoginShow] = useState(false);
+    const [showSignUp, setSignUpShow] = useState(false);
+    const handleLoginClose = () => setLoginShow(false);
+    const handleLoginShow = () => setLoginShow(true);
+    const handleSignUpClose = () => setSignUpShow(false);
+    const handleSignUpShow = () => setSignUpShow(true);
+    
 
     return (
         <Container>
-            <NavBar />
+            <NavBar isLogin = {handleLoginShow} isSignUp = {handleSignUpShow} />
             <Row className = "landing">
                 <Col sm={5} className = "slogan">
                     <Row className="description">
@@ -30,7 +35,7 @@ const Landing = () => {
                     <Row>
                         <Button 
                             variant="dark"
-                            onClick={handleShow}
+                            onClick={handleSignUpShow}
                             className="join-now-button"
                         > JOIN NOW</Button>
                     </Row>
@@ -40,19 +45,49 @@ const Landing = () => {
                 </Col> 
             </Row>
 
-            <Modal show={show} onHide={handleClose}>
-                <Modal.Header closeButton>
-                <Modal.Title>Modal heading</Modal.Title>
-                </Modal.Header>
-                <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
-                <Modal.Footer>
-                <Button variant="secondary" onClick={handleClose}>
-                    Close
-                </Button>
-                <Button variant="primary" onClick={handleClose}>
-                    Save Changes
-                </Button>
-                </Modal.Footer>
+            <Modal centered show={showLogin} onHide={handleLoginClose}>
+                <Modal.Body className = "login" >
+                    <img src={Equality} className="equality-image" alt="Everyone in Equality"/> 
+                    <Form className = "form">
+                        <Form.Group className="mb-3" controlId="formBasicEmail" alt="Enter your email" >
+                            <Form.Control type="email" placeholder="Enter your email" />
+                        </Form.Group>
+
+                        <Form.Group className="mb-3" controlId="formBasicPassword" alt="Enter your password">
+                            <Form.Control type="password" placeholder="Enter your password" />
+                        </Form.Group>
+                        <Button variant="primary" className="button" type="submit" alt="Login Button">
+                            Log In
+                        </Button>
+                    </Form>
+                </Modal.Body>
+            </Modal>
+
+            <Modal centered show={showSignUp} onHide={handleSignUpClose}>
+                <Modal.Body className = "signup" >
+                    <img src={Equality} className="equality-image" alt="Everyone in Equality"/> 
+                    <Form className = "form">
+                        <Form.Group className="mb-3" controlId="formBasicName" alt="Enter your name">
+                            <Form.Control type="email" placeholder="Enter your name" />
+                        </Form.Group>
+
+                        <Form.Group className="mb-3" controlId="formBasicEmail" alt="Enter your email">
+                            <Form.Control type="email" placeholder="Enter your email" />
+                        </Form.Group>
+
+                        <Form.Group className="mb-3" controlId="formBasicPassword" alt="Enter your password">
+                            <Form.Control type="password" placeholder="Enter your password" />
+                        </Form.Group>
+
+                        <Form.Group className="mb-3" controlId="formConfirmPassword" alt="Re-Enter your password">
+                            <Form.Control type="password" placeholder="Re-Enter your password" />
+                        </Form.Group>
+
+                        <Button variant="primary" className="button" type="submit" alt="Sign Up Button">
+                            Sign Up
+                        </Button>
+                    </Form>
+                </Modal.Body>
             </Modal>
 
         </Container>
