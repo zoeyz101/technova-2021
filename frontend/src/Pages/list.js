@@ -39,17 +39,17 @@ const List = () =>{
             event.preventDefault();
             event.stopPropagation();
         }
+        setValidated(true)
         let newList = fullList
-        newList.append({
+        newList.push({
             title: "Made a new friend",
             type: "Personal Life",
             date: '2019-09-15',
             description: "they were very nice!"
         })
-        setList([...newList])
-        setFullList([...fullList])
         setAddShow(false)
-        setValidated(true);
+        setList([...newList])
+        setFullList([...newList])
         console.log("list set!")
     }
     const [fullList, setFullList] = useState(originalList)
