@@ -1,0 +1,25 @@
+.group {
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  background: #ffffff;
+  width: 100%;
+  height: 100%;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.type-button-work {
+  background-color: #bd83eb;
+  border-radius: 7px;
+  margin-bottom: 0.5rem;
+}
+
+.equality-image {
+  width: 20vh;
+  margin-bottom: 20px;
+}

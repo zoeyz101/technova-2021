@@ -7,6 +7,7 @@ const router = express.Router();
 const Accomplishment = require("../../models/Accomplishment");
 
 router.post("/addItem", (req, res) => {
+  try {
     const newAccomplishment = new Accomplishment({
         email: req.body.email,
         title: req.body.title,
@@ -17,17 +18,25 @@ router.post("/addItem", (req, res) => {
 
     newAccomplishment
       .save()
-      .then(accomplishment => res.json(accomplishment))
+      .then(accomplishment => res.json(accomplishment)) 
+    }catch (err) {
+        console.error(err);
+      }
+});
+
+router.route("/").get(async (req, res) => {
+  try {
+    console.log("accomplishments")
+  }catch (err) {
+    console.error(err);
+  }
 });
 
 router.route("/getAll").get(async (req, res) => {
   try {
     const client = await MongoClient.connect(process.env.MONGO_URL);
-    const dbo = client.db("TechNova2021");
-    dbo
-      .collection("accomplishments")
-      .find({})
-      .toArray(function (err, result) {
+    const dbo = client.db("Technova2021");
+    dbo.collection("accomplishments").find({}).toArray(function (err, result) {
         res.json(result);
       });
   } catch (err) {
