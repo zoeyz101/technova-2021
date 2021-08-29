@@ -34,9 +34,9 @@ const Landing = () => {
                     <Row className="description">
                     <Typewriter
                             onInit={(typewriter) => {
-                                typewriter.typeString('Overcoming imposter syndrome by tracking one accomplishment')
+                                typewriter.typeString('Overcoming imposter syndrome by tracking one accomplishment.')
                                 .pauseFor(1500)
-                                .deleteChars(4)
+                                .deleteChars(5)
                                 typewriter.typeString('Women+ at a time.')
                                 .start();
                             }}
