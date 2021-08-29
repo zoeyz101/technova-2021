@@ -39,31 +39,21 @@ const List = () =>{
             event.preventDefault();
             event.stopPropagation();
         }
+        let newList = fullList
+        newList.append({
+            title: "Made a new friend",
+            type: "Personal Life",
+            date: '2019-09-15',
+            description: "they were very nice!"
+        })
+        setList([...newList])
+        setFullList([...fullList])
+        setAddShow(false)
         setValidated(true);
+        console.log("list set!")
     }
-
-
-    const sample_accomplishment = {
-        title: "Dean's List",
-        type: "Award",
-        date: '2020-09-15',
-        description: "I made the Dean's List!"
-    }
-    const sample_accomplishment2 = {
-        title: "Trevor Project",
-        type: "Volunteer",
-        date: '2019-09-15',
-        description: "I volunteered at the Trevor Project and got to talk to a bunch of kids who are LGBTQ+! It was so cool to meet more people in my community!"
-    }
-    const sample_accomplishment3 = {
-        title: "EngSoc AdComm S21",
-        type: "Work/Education",
-        date: '2021-05-15',
-        description: "I got the EngSoc commissionership I've been wanting for a year!"
-    }
-    const originalList = [sample_accomplishment, sample_accomplishment2, sample_accomplishment, sample_accomplishment3, sample_accomplishment2, sample_accomplishment]
-
-    const [accomplishment_list, setList] = useState(originalList)
+    const [fullList, setFullList] = useState(originalList)
+    const [currList, setList] = useState(originalList)
     const selectedAccomplishments = (selected) => {
         let newSelect = []
         selected.forEach(
@@ -71,17 +61,17 @@ const List = () =>{
                 newSelect.push(option.label);
               })
         if (newSelect.length===0){
-            setList(originalList)
+            setList(fullList)
         }else{
-            setList(originalList.filter((accomplishment =>{
+            setList(fullList.filter((accomplishment =>{
                 return newSelect.includes(accomplishment.type)
             })))
         }
     }
-    
+
     const sortAccomplishments = (selected) => {
         const sort = selected.label
-        let sortedList = accomplishment_list;
+        let sortedList = currList;
         if (sort === "Type"){
             sortedList = sortedList.sort((a, b) =>{
                 const typeA = a.type
@@ -102,7 +92,7 @@ const List = () =>{
             })
         }
         setList([...sortedList])
-        console.log (accomplishment_list)
+        console.log (currList)
     }
 
     return (
@@ -131,7 +121,7 @@ const List = () =>{
             </Row>
             <Row xs={1} md={2} lg={4} className="g-4" id="cards">
                {
-                   accomplishment_list.map((accomplishment) =>(
+                   currList.map((accomplishment) =>(
                     <Col>
                         <Accomplishment title={accomplishment["title"]} type={accomplishment["type"]} date={accomplishment["date"]} description={accomplishment["description"]}/>
                     </Col>
@@ -186,5 +176,25 @@ const List = () =>{
         </body>
     );
 }
+
+const sample_accomplishment = {
+    title: "Dean's List",
+    type: "Award",
+    date: '2020-09-15',
+    description: "I made the Dean's List!"
+}
+const sample_accomplishment2 = {
+    title: "Trevor Project",
+    type: "Volunteer",
+    date: '2019-09-15',
+    description: "I volunteered at the Trevor Project and got to talk to a bunch of kids who are LGBTQ+! It was so cool to meet more people in my community!"
+}
+const sample_accomplishment3 = {
+    title: "EngSoc AdComm S21",
+    type: "Work/Education",
+    date: '2021-05-15',
+    description: "I got the EngSoc commissionership I've been wanting for a year!"
+}
+const originalList = [sample_accomplishment, sample_accomplishment2, sample_accomplishment, sample_accomplishment3, sample_accomplishment2, sample_accomplishment]
 
 export default List;
